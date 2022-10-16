@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    {% block title %}
+        <title>Live WorldCup</title>
+    {% endblock %}
+
+    <meta name="keywords" content="HTML5 Template"/>
+    <meta name="description" content="">
+    <meta name="author" content="themeforest.net/user/iwthemes/portfolio?ref=iwthemes">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Theme CSS -->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" media="screen">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/ico" href="{% static 'img/icons/logo-bg.png' %}"/>
+    <!-- Fontawesome -->
+    <script defer src="{% static 'js/fontawesome.js' %}"></script>
+</head>
+
+<body>
+
+<!-- /.loader -->
+{#<div class="loader">#}
+{#    <div class="loader__spinner"></div>#}
+{#    <div class="loader__background"></div>#}
+{#</div>#}
+<!-- /.loader -->
+
+<!--Menu Expanded-->
+<div class="collapse mobile-menu" id="navbarToggleExternalContent">
+    <div class="p-4">
+        <ul class="menuSite">
+            <li><a href="{% url 'home' %}" class="scroll">Home</a></li>
+            <li><a href="#trips" class="scroll">Today Matches</a></li>
+            <li><a href="#register" class="scroll">Live Score</a></li>
+            <li><a href="#schedule" class="scroll">Match Schedule</a></li>
+            <li><a href="{% url 'privacy_policy' %}" class="scroll">Privacy Policy</a></li>
+            <li><a href="#contact" class="scroll">Contact</a></li>
+        </ul>
+    </div>
+</div>
+<!--/Menu Expanded-->
+
+<!--Menu Sticked-->
+<div class="nav-scroll menu-sticked d-none d-lg-block d-xl-block">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 text-left"><a href="#home" class="scroll"><img
+                    src="{% static 'img/icons/logo-menu.png' %}" alt="logo"
+                    class="logo"></a></div>
+            <div class="col-8 d-none d-lg-block text-center">
+                <ul class="menuSite">
+                    <li><a href="#home" class="scroll">Home</a></li>
+                    <li><a href="#trips" class="scroll">Score</a></li>
+                    <li><a href="#register" class="scroll">Matches</a></li>
+                    <li><a href="{% url 'privacy_policy' %}" class="scroll">PrivacyPolicy</a></li>
+                    <li><a href="#prices" class="scroll">Teams</a></li>
+                    <li><a href="{% url 'contact_us' %}" class="scroll">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-2 text-right">
+                <ul class="menu-bar">
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Menu Sticked-->
+
+{% include 'include/navbar.html' %}
+
+<!--Register & More Description-->
+{#<section class="registerEvent" id="register">#}
+{#    <div class="container-fluid">#}
+{#        <div class="row">#}
+{#            <div class="col-xl-6">#}
+{#                <div class="register">#}
+{#                    <h2>Book Today and Get 10% off in All Tickets!</h2>#}
+{#                    <p>Get your tickets emailed to you within 24 hours</p>#}
+{##}
+{#                    <!--Form Register-->#}
+{#                    <div class="form-register mt-5">#}
+{#                        <!--Form-->#}
+{#                        <form>#}
+{#                            <div class="row form-group">#}
+{#                                <div class="col-12">#}
+{#                                    <input type="text" class="form-control" name="fullname" id="fullname"#}
+{#                                           placeholder="Full Name or Company Name *" required>#}
+{#                                </div>#}
+{##}
+{#                                <div class="col-12">#}
+{#                                    <input type="email" class="form-control email" name="email" id="email"#}
+{#                                           placeholder="Email*" required>#}
+{#                                </div>#}
+{##}
+{#                                <div class="col-sm-6">#}
+{#                                    <input type="text" class="form-control" placeholder="Zip Code">#}
+{#                                </div>#}
+{#                                <div class="col-sm-6">#}
+{#                                    <input type="text" class="form-control" placeholder="City*" required>#}
+{#                                </div>#}
+{##}
+{#                                <div class="col-12 mt-3">#}
+{#                                    <select class="form-control valid" name="ticket" id="ticket" required="required">#}
+{#                                        <option value="" selected="">Select your Plan *</option>#}
+{#                                        <option value="general">Silver - 10usd</option>#}
+{#                                        <option value="gold">Gold - 50usd</option>#}
+{#                                        <option value="platinum">Platinum - 100usd</option>#}
+{#                                    </select>#}
+{#                                </div>#}
+{##}
+{#                                <div class="col-12 mt-3">#}
+{#                                    <input type="text" class="form-control" placeholder="Write the Date you'll take it*"#}
+{#                                           required>#}
+{#                                </div>#}
+{##}
+{#                                <div class="col-sm-6">#}
+{#                                    <input type="number" class="form-control" placeholder="Quantity">#}
+{#                                </div>#}
+{#                                <div class="col-sm-6">#}
+{#                                    <input type="number" class="form-control" placeholder="Phone">#}
+{#                                </div>#}
+{##}
+{#                                <div class="col-12 mt-3">#}
+{#                                    <div class="form-check">#}
+{#                                        <input class="form-check-input" type="checkbox" id="gridCheck1">#}
+{#                                        <label class="form-check-label" for="gridCheck1">#}
+{#                                            Submit to the monthly newsletter#}
+{#                                        </label>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{##}
+{#                            <div class="row">#}
+{#                                <div class="col">#}
+{#                                    <button type="submit" class="btn btn-primary btn-sm btn-block">Get Tickets</button>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </form>#}
+{#                        <!--Form-->#}
+{#                    </div>#}
+{#                    <!--Form Register-->#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#            <div class="col-xl-6">#}
+{#                <!--About-->#}
+{#                <div class="aboutEvent">#}
+{#                    <div class="row">#}
+{#                        <!--Item-->#}
+{#                        <div class="col-sm-6">#}
+{#                            <div class="itemAboutEvent">#}
+{#                                <img src="{% static 'img/book/book1.jpg' %}" alt="preview about">#}
+{#                                <div class="descriptionItem mb-4">#}
+{#                                    <h4>Easy to Use</h4>#}
+{#                                    <p>Enter the data from your card once.</p>#}
+{#                                </div>#}
+{##}
+{#                                <img src="{% static 'img/book/book3.jpg' %}" alt="preview about">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <!--Item-->#}
+{##}
+{#                        <!--Item-->#}
+{#                        <div class="col-sm-6">#}
+{#                            <div class="itemAboutEvent mt-5">#}
+{#                                <img src="{% static 'img/book/book2.jpg' %}" alt="preview about">#}
+{#                                <div class="descriptionItem mt-5">#}
+{#                                    <h4>Delivered</h4>#}
+{#                                    <p>Meet the seller in a crowded place and check to confirm.</p>#}
+{#                                </div>#}
+{##}
+{#                                <div class="descriptionItem">#}
+{#                                    <h4>Our products!</h4>#}
+{#                                    <p>We have a Buyer Protection Program to care.</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <!--Item-->#}
+{#                    </div>#}
+{#                </div>#}
+{#                <!--About-->#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+<!--Register & More Description-->
+
+<!--Schedule-->
+<section class="gallery" id="trips">
+    <div class="galleryList mt-3 mb-5">
+        <!--Item-->
+        <figure class="image-gallery">
+            <img src="{% static 'img/djs/dj-1.jpg' %}" alt="trip">
+            <div class="overlay-hover"></div>
+            <figcaption class="overlay-info">
+            </figcaption>
+        </figure>
+        <!--Item-->
+
+        <!--Item-->
+        <figure class="image-gallery">
+            <img src="{% static 'img/djs/dj-2.jpg' %}" alt="trip">
+            <div class="overlay-hover"></div>
+            <figcaption class="overlay-info">
+            </figcaption>
+        </figure>
+        <!--Item-->
+    </div>
+</section>
+<!--Schedule-->
+
+{#<!--Sponsors-->#}
+{#<section class="whoHelpus">#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col text-right">#}
+{#                <h2>Who are Supporting</h2>#}
+{#                <p>Here is the full list of people that is helping us</p>#}
+{#            </div>#}
+{##}
+{#            <div class="col">#}
+{#                <ul class="sponsors mt-4">#}
+{#                    <li><a href="#"><img src="{% static 'img/sponsors/sponsor-1.jpg' %}" alt="logo sponsor"></a></li>#}
+{#                    <li><a href="#"><img src="{% static 'img/sponsors/sponsor-2.jpg' %}" alt="logo sponsor"></a></li>#}
+{#                    <li><a href="#"><img src="{% static 'img/sponsors/sponsor-3.jpg' %}" alt="logo sponsor"></a></li>#}
+{#                    <li><a href="#"><img src="{% static 'img/sponsors/sponsor-1.jpg' %}" alt="logo sponsor"></a></li>#}
+{#                    <li><a href="#"><img src="{% static 'img/sponsors/sponsor-3.jpg' %}" alt="logo sponsor"></a></li>#}
+{#                    <li><a href="#"><img src="{% static 'img/sponsors/sponsor-2.jpg' %}" alt="logo sponsor"></a></li>#}
+{#                    <li><a href="#"><img src="{% static 'img/sponsors/sponsor-1.jpg' %}" alt="logo sponsor"></a></li>#}
+{#                    <li><a href="#"><img src="{% static 'img/sponsors/sponsor-3.jpg' %}" alt="logo sponsor"></a></li>#}
+{#                </ul>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+{#<!--Sponsors-->#}
+
+<!--New-->
+<div class="media-content">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-lg-11">
+                <div class="row">
+                    {#                    <div class="col-sm-7">#}
+                    {#                        <h4 class="ml-2">VIDEOS</h4>#}
+                    {#                        <ul class="media-videos mt-3">#}
+                    {#                            <li>#}
+                    {#                                <iframe frameborder="0" allowfullscreen=""#}
+                    {#                                        src="https://services.brid.tv/services/iframe/video/973085/23197/33258/0/1/?amp=1"#}
+                    {#                                        class="i-amphtml-fill-content" __idm_id__="57345"></iframe>#}
+                    {#                            </li>#}
+                    {#                            <li>#}
+                    {#                                <iframe frameborder="0" allowfullscreen=""#}
+                    {#                                        src="https://services.brid.tv/services/iframe/video/973085/23197/33258/0/1/?amp=1"#}
+                    {#                                        class="i-amphtml-fill-content" __idm_id__="57345"></iframe>#}
+                    {#                            </li>#}
+                    {#                            <li>#}
+                    {#                                <iframe frameborder="0" allowfullscreen=""#}
+                    {#                                        src="https://services.brid.tv/services/iframe/video/973085/23197/33258/0/1/?amp=1"#}
+                    {#                                        class="i-amphtml-fill-content" __idm_id__="57345"></iframe>#}
+                    {#                            </li>#}
+                    {#                        </ul>#}
+                    {#                    </div>#}
+                    <div class="col-lg-5">
+                        <h4>Live HD WorldCup 2022 On PTV Sports</h4>
+                        <iframe frameborder="0" allowfullscreen=""
+                                src="https://services.brid.tv/services/iframe/video/973085/23197/33258/0/1/?amp=1"
+                                width="2000" height="300" class="i-amphtml-fill-content" __idm_id__="57345"></iframe>
+                    </div>
+                    <div class="col-lg-5">
+                        <h4>Live HD WorldCup 2022 On Star Tv</h4>
+                        <iframe class="iframe" title="live score"
+                                src="https://gocast123.me/embed.php?player=desktop&amp;v=star1in&amp;vw=100%&amp;vh=100%"
+                                scrolling="no" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen=""></iframe>
+
+                    </div>
+{#                    <div class="col-lg-5">#}
+{#                        <h4>Live HD WorldCup 2022 On AT Super</h4>#}
+{#                        <iframe name="iframe_a" src="https://stream.crichd.vip/update/asportshd.php"#}
+{#                                allowfullscreen="true" scrolling="no"#}
+{#                                marginheight="0" marginwidth="0"></iframe>#}
+{##}
+{#                    </div>#}
+{#                    <div class="col-lg-5">#}
+{#                        <h4>Live HD WorldCup 2022</h4>#}
+{#                        <iframe frameborder="0" allowfullscreen=""#}
+{#                                src="https://cdn2.crichd.pro/embed2.php?id=osncric"#}
+{#                                width="2000" height="300" class="i-amphtml-fill-content" __idm_id__="57345"></iframe>#}
+{#                    </div>#}
+{#                    <div class="col-lg-5">#}
+{#                        <h4>Live HD WorldCup 2022</h4>#}
+{#                        <iframe frameborder="0" allowfullscreen=""#}
+{#                                src="https://gocast123.me/embed.php?player=desktop&v=ptvpk"#}
+{#                                width="2000" height="300" class="i-amphtml-fill-content" __idm_id__="57345"></iframe>#}
+{#                    </div>#}
+{#                    <div class="col-lg-5">#}
+{#                        <h4>Live HD WorldCup 2022</h4>#}
+{#                        <iframe frameborder="0" allowfullscreen=""#}
+{#                                src="https://cdn2.crichd.pro/embed2.php?id=ptvsp"#}
+{#                                width="2000" height="300" class="i-amphtml-fill-content" __idm_id__="57345"></iframe>#}
+                        {#                        <iframe name="iframe_a" src="https://cdn2.crichd.pro/embed2.php?id=ptvsp" id="iframe_a"#}
+                        {#                                width="90%" height="520" frameborder="0" allowfullscreen="true" scrolling="no"#}
+                        {#                                marginheight="0" marginwidth="0"></iframe>#}
+{##}
+                        {#                        <iframe name="iframe_a" src="https://cdn2.crichd.pro/embed2.php?id=ptvsp" id="iframe_a"#}
+                        {#                                width="90%" height="520" frameborder="0" allowfullscreen="true" scrolling="no"#}
+                        {#                                marginheight="0" marginwidth="0"></iframe>#}
+{#                    </div>#}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--New-->
+
+<!--Schedule Program-->
+{#<section class="general-schedule-bg" id="schedule">#}
+{#    <div class="col-xl-8 offset-xl-4 p-0">#}
+{#        <div class="content-GeneralSchedule">#}
+{##}
+{#            <!--Tabs-->#}
+{#            <div class="tabH">#}
+{##}
+{#                <div class="counter">#}
+{#                    <div id="event-one"></div>#}
+{#                    <div class="text-right mt-4">#}
+{#                        <a href="#" class="btn small"><i class="fas fa-clipboard-list"></i> Get itinerary</a>#}
+{#                        <a href="#" class="btn small"><i class="fas fa-headphones"></i> Contact Us</a>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <ul class="nav nav-pills" role="tablist">#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link active" data-toggle="pill" href="#tab-dayone" role="tab">#}
+{#                            <h4>Day 1</h4>#}
+{#                            <time datetime="2020-07-01T08:00-08:00">#}
+{#                                <span class="dtstart"><i class="far fa-calendar"></i> 30 Dec, 201x</span>#}
+{#                            </time>#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" data-toggle="pill" href="#tab-daytwo" role="tab">#}
+{#                            <h4>Day 2</h4>#}
+{#                            <time datetime="2020-07-01T08:00-08:00">#}
+{#                                <span class="dtstart"><i class="far fa-calendar"></i> 31 Dec, 201x</span>#}
+{#                            </time>#}
+{#                        </a>#}
+{#                    </li>#}
+{#                </ul>#}
+{#            </div>#}
+{#            <!--Tabs-->#}
+{##}
+{#            <!--Tabs Content-->#}
+{#            <div class="tab-content" id="pills-tabContent">#}
+{#                <div class="tab-pane fade show active" id="tab-dayone" role="tabpanel">#}
+{##}
+{#                    <!--Order-->#}
+{#                    <div class="schedule-order">#}
+{#                        <div class="row">#}
+{#                            <div class="col-lg-6">#}
+{#                                <!--Event-->#}
+{#                                <div class="vevent">#}
+{#                                    <h5 class="place"><i class="fas fa-map-pin"></i> Main Stage</h5>#}
+{#                                    <h4 class="summary mt-3">by <a href="#">Eric Prydz</a>,<a href="#"> Wolftpack</a>,#}
+{#                                        <a href="#">Dirty South</a>, <a href="#">Nervo</a>, <a href="#">Skrillets</a>#}
+{#                                    </h4>#}
+{#                                    <span class="hours"><i class="far fa-clock"></i> 05:00</span>#}
+{#                                    <p class="description"><i class="fa fa-angle-double-right"></i> It’s that time of#}
+{#                                        year again where we ask you to grow and show, and groom and prune, as we invite#}
+{#                                        you to our annual Envato Market December contest!!</p>#}
+{#                                </div>#}
+{#                                <!--Event-->#}
+{#                            </div>#}
+{##}
+{#                            <div class="col-lg-6">#}
+{#                                <!--Event-->#}
+{#                                <div class="vevent">#}
+{#                                    <h5 class="place"><i class="fas fa-map-pin"></i> Main Stage</h5>#}
+{#                                    <h4 class="summary mt-3">by <a href="#">Eric Prydz</a>,<a href="#"> Wolftpack</a>,#}
+{#                                        <a href="#">Dirty South</a>, <a href="#">Nervo</a>, <a href="#">Skrillets</a>#}
+{#                                    </h4>#}
+{#                                    <span class="hours"><i class="far fa-clock"></i> 10:00</span>#}
+{#                                    <p class="description"><i class="fa fa-angle-double-right"></i> It’s that time of#}
+{#                                        year again where we ask you to grow and show, and groom and prune, as we invite#}
+{#                                        you to our annual Envato Market December contest!!</p>#}
+{#                                </div>#}
+{#                                <!--Event-->#}
+{#                            </div>#}
+{##}
+{#                            <div class="col-lg-6">#}
+{#                                <!--Event-->#}
+{#                                <div class="vevent">#}
+{#                                    <h5 class="place"><i class="fas fa-map-pin"></i> Main Stage</h5>#}
+{#                                    <h4 class="summary mt-3">by <a href="#">Eric Prydz</a>,<a href="#"> Wolftpack</a>,#}
+{#                                        <a href="#">Dirty South</a>, <a href="#">Nervo</a>, <a href="#">Skrillets</a>#}
+{#                                    </h4>#}
+{#                                    <span class="hours"><i class="far fa-clock"></i> 15:00</span>#}
+{#                                    <p class="description"><i class="fa fa-angle-double-right"></i> It’s that time of#}
+{#                                        year again where we ask you to grow and show, and groom and prune, as we invite#}
+{#                                        you to our annual Envato Market December contest!!</p>#}
+{#                                </div>#}
+{#                                <!--Event-->#}
+{#                            </div>#}
+{##}
+{#                            <div class="col-lg-6">#}
+{#                                <!--Event-->#}
+{#                                <div class="vevent">#}
+{#                                    <h5 class="place"><i class="fas fa-map-pin"></i> Main Stage</h5>#}
+{#                                    <h4 class="summary mt-3">by <a href="#">Eric Prydz</a>,<a href="#"> Wolftpack</a>,#}
+{#                                        <a href="#">Dirty South</a>, <a href="#">Nervo</a>, <a href="#">Skrillets</a>#}
+{#                                    </h4>#}
+{#                                    <span class="hours"><i class="far fa-clock"></i> 20:00</span>#}
+{#                                    <p class="description"><i class="fa fa-angle-double-right"></i> It’s that time of#}
+{#                                        year again where we ask you to grow and show, and groom and prune, as we invite#}
+{#                                        you to our annual Envato Market December contest!!</p>#}
+{#                                </div>#}
+{#                                <!--Event-->#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <!--Order-->#}
+{##}
+{#                </div>#}
+{#                <div class="tab-pane fade" id="tab-daytwo" role="tabpanel">#}
+{##}
+{#                    <!--Order-->#}
+{#                    <div class="schedule-order">#}
+{#                        <div class="row">#}
+{#                            <div class="col-lg-6">#}
+{#                                <!--Event-->#}
+{#                                <div class="vevent">#}
+{#                                    <h5 class="place"><i class="fas fa-map-pin"></i> Main Stage</h5>#}
+{#                                    <h4 class="summary mt-3">by <a href="#">Eric Prydz</a>,<a href="#"> Wolftpack</a>,#}
+{#                                        <a href="#">Dirty South</a>, <a href="#">Nervo</a>, <a href="#">Skrillets</a>#}
+{#                                    </h4>#}
+{#                                    <span class="hours"><i class="far fa-clock"></i> 05:00</span>#}
+{#                                    <p class="description"><i class="fa fa-angle-double-right"></i> It’s that time of#}
+{#                                        year again where we ask you to grow and show, and groom and prune, as we invite#}
+{#                                        you to our annual Envato Market December contest!!</p>#}
+{#                                </div>#}
+{#                                <!--Event-->#}
+{#                            </div>#}
+{##}
+{#                            <div class="col-lg-6">#}
+{#                                <!--Event-->#}
+{#                                <div class="vevent">#}
+{#                                    <h5 class="place"><i class="fas fa-map-pin"></i> Main Stage</h5>#}
+{#                                    <h4 class="summary mt-3">by <a href="#">Eric Prydz</a>,<a href="#"> Wolftpack</a>,#}
+{#                                        <a href="#">Dirty South</a>, <a href="#">Nervo</a>, <a href="#">Skrillets</a>#}
+{#                                    </h4>#}
+{#                                    <span class="hours"><i class="far fa-clock"></i> 10:00</span>#}
+{#                                    <p class="description"><i class="fa fa-angle-double-right"></i> It’s that time of#}
+{#                                        year again where we ask you to grow and show, and groom and prune, as we invite#}
+{#                                        you to our annual Envato Market December contest!!</p>#}
+{#                                </div>#}
+{#                                <!--Event-->#}
+{#                            </div>#}
+{##}
+{#                            <div class="col-lg-6">#}
+{#                                <!--Event-->#}
+{#                                <div class="vevent">#}
+{#                                    <h5 class="place"><i class="fas fa-map-pin"></i> Main Stage</h5>#}
+{#                                    <h4 class="summary mt-3">by <a href="#">Eric Prydz</a>,<a href="#"> Wolftpack</a>,#}
+{#                                        <a href="#">Dirty South</a>, <a href="#">Nervo</a>, <a href="#">Skrillets</a>#}
+{#                                    </h4>#}
+{#                                    <span class="hours"><i class="far fa-clock"></i> 15:00</span>#}
+{#                                    <p class="description"><i class="fa fa-angle-double-right"></i> It’s that time of#}
+{#                                        year again where we ask you to grow and show, and groom and prune, as we invite#}
+{#                                        you to our annual Envato Market December contest!!</p>#}
+{#                                </div>#}
+{#                                <!--Event-->#}
+{#                            </div>#}
+{##}
+{#                            <div class="col-lg-6">#}
+{#                                <!--Event-->#}
+{#                                <div class="vevent">#}
+{#                                    <h5 class="place"><i class="fas fa-map-pin"></i> Main Stage</h5>#}
+{#                                    <h4 class="summary mt-3">by <a href="#">Eric Prydz</a>,<a href="#"> Wolftpack</a>,#}
+{#                                        <a href="#">Dirty South</a>, <a href="#">Nervo</a>, <a href="#">Skrillets</a>#}
+{#                                    </h4>#}
+{#                                    <span class="hours"><i class="far fa-clock"></i> 20:00</span>#}
+{#                                    <p class="description"><i class="fa fa-angle-double-right"></i> It’s that time of#}
+{#                                        year again where we ask you to grow and show, and groom and prune, as we invite#}
+{#                                        you to our annual Envato Market December contest!!</p>#}
+{#                                </div>#}
+{#                                <!--Event-->#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <!--Order-->#}
+{##}
+{#                </div>#}
+{#            </div>#}
+{#            <!--Tabs Content-->#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+<!--Schedule Program-->
+
+<!--Newsletter-->
+{#<section class="newsletter">#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-12">#}
+{#                <!-- Begin MailChimp Signup Form -->#}
+{#                <div id="mc_embed_signup" class="formNewsletter">#}
+{#                    <form action="https://iwthemes.us3.list-manage.com/subscribe/post?u=7bbefaad6b02371d6327f12ab&amp;id=6f97fbc0b5"#}
+{#                          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"#}
+{#                          class="validate text-center" target="_blank" novalidate>#}
+{#                        <h3>Join Our Newsletter</h3>#}
+{#                        <p>Deal alert to your inbox!</p>#}
+{#                        <div id="mc_embed_signup_scroll" class="mc_embed_signup_scroll mt-4">#}
+{#                            <input type="email" value="" name="EMAIL" class="email input-write"#}
+{#                                   placeholder="support@iwthemes.com" required>#}
+{#                            <div style="position: absolute; left: -5000px;" aria-hidden="true">#}
+{#                                <input type="text" name="b_7bbefaad6b02371d6327f12ab_6f97fbc0b5" tabindex="-1" value="">#}
+{#                            </div>#}
+{#                            <input type="submit" value="subscribe" name="subscribe" id="mc-embedded-subscribe"#}
+{#                                   class="button">#}
+{#                        </div>#}
+{#                    </form>#}
+{#                </div>#}
+{#                <!--End mc_embed_signup-->#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="follow-btn"><i class="fab fa-instagram"></i> FOLLOW US <a href="https://www.instagram.com/jekamabu/"#}
+{#                                                                          target="_blank">@iwthemes</a></div>#}
+{#</section>#}
+<!--Newsletter-->
+
+<!--Instagram Api-->
+<div id="instafeed"></div>
+<!--Instagram Api-->
+
+<!--Faq-->
+{#<section class="faq">#}
+{#    <div class="container-fluid">#}
+{#        <h2 class="text-center">Faq's Questions</h2>#}
+{##}
+{#        <!--First Part Faqs-->#}
+{#        <div class="row">#}
+{#            <div class="col-xl-4">#}
+{#                <div class="faq-item">#}
+{#                    <h5>What is Sign In Verification?</h5>#}
+{#                    <p>At Envato, we take our users’ account security very seriously. One of the ways we protect your#}
+{#                        account is through “Sign In verification”, a feature to make sure that the person who signs in#}
+{#                        to your account really is you.</p>#}
+{#                </div>#}
+{#                <div class="faq-item">#}
+{#                    <h5>What do I do if I've forgotten my username or password</h5>#}
+{#                    <p>Below the login input fields there are two links — 'Forgot Your Password?' and 'Forgot Your#}
+{#                        Username?'. Click the appropriate link to send a message to your account email address.</p>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-xl-4">#}
+{#                <div class="faq-item">#}
+{#                    <h5>Staying Safe &amp; Vigilant Against Phishing &amp; Scams</h5>#}
+{#                    <p>It is important to protect your Envato account from unauthorised access.</p>#}
+{#                </div>#}
+{#                <div class="faq-item">#}
+{#                    <h5>What do I do if I've forgotten my username or password</h5>#}
+{#                    <p>Below the login input fields there are two links — 'Forgot Your Password?' and 'Forgot Your#}
+{#                        Username?'. Click the appropriate link to send a message to your account email address.</p>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-xl-4">#}
+{#                <div class="faq-item">#}
+{#                    <h5>What is Sign In Verification?</h5>#}
+{#                    <p>At Envato, we take our users’ account security very seriously. One of the ways we protect your#}
+{#                        account is through “Sign In verification”, a feature to make sure that the person who signs in#}
+{#                        to your account really is you.</p>#}
+{#                </div>#}
+{#                <div class="faq-item">#}
+{#                    <h5>What do I do if I've forgotten my username or password</h5>#}
+{#                    <p>Below the login input fields there are two links — 'Forgot Your Password?' and 'Forgot Your#}
+{#                        Username?'. Click the appropriate link to send a message to your account email address.</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <!--First Part Faqs-->#}
+{##}
+{#    </div>#}
+{#</section>#}
+<!--Faq-->
+
+<!--Video-->
+{#<section class="live-banner text-center">#}
+{#    <video autoplay="" muted="" loop="" poster="{% static 'video/video.jpg' %}">#}
+{#        <source src="{% static 'video/video.webm' %}" type="video/webm">#}
+{#    </video>#}
+{##}
+{#    <div class="overlay">#}
+{#        <div class="container">#}
+{#            <div class="row justify-content-md-center">#}
+{#                <div class="col-lg-8">#}
+{#                    <h2>You missed any transmission?</h2>#}
+{#                    <p>This is an example with Background Video. We show a link with last videos transmitted or you can#}
+{#                        use for your needing. Live transmissions every</p>#}
+{#                    <a href="https://www.youtube.com/channel/UCEb3nAep6tYiAkZpqi0Kzew"#}
+{#                       class="follow-youtube btn mt-5 light"><i class="fab fa-youtube"></i> Follow us on Youtube Channel</a>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+<!--Video-->
+
+<!--Pricing Table-->
+{#<section class="pricing" id="prices">#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-lg-4">#}
+{#                <!--Pricing Table-->#}
+{#                <div class="pricing-table plan1 mt-5">#}
+{#                    <div class="pricingHeader">#}
+{#                        <div class="icon">#}
+{#                            <i class="fab fa-telegram-plane"></i>#}
+{#                        </div>#}
+{#                        <div class="price">54</div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="pricingBody">#}
+{#                        <div class="info-pricing">#}
+{#                            <h2>Silver</h2>#}
+{#                            <p class="mt-3">Arriving by car? Switch off your GPS-device once you reach the festival#}
+{#                                area! Your GPS device doesn’t know Tomorrowland ;-) .</p>#}
+{#                            <a href="#" class="btn mt-4 medium">Purchase Now</a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="overlay"></div>#}
+{#                </div>#}
+{#                <!--Pricing Table-->#}
+{#            </div>#}
+{##}
+{#            <div class="col-lg-4">#}
+{#                <!--Pricing Table-->#}
+{#                <div class="pricing-table plan2 mt-5">#}
+{#                    <div class="pricingHeader">#}
+{#                        <div class="icon">#}
+{#                            <i class="fab fa-telegram-plane"></i>#}
+{#                        </div>#}
+{#                        <div class="price">104</div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="pricingBody">#}
+{#                        <div class="info-pricing">#}
+{#                            <h2>Gold</h2>#}
+{#                            <p class="mt-3">Arriving by car? Switch off your GPS-device once you reach the festival#}
+{#                                area! Your GPS device doesn’t know Tomorrowland ;-) .</p>#}
+{#                            <a href="#" class="btn mt-4 medium">Purchase Now</a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="overlay"></div>#}
+{#                </div>#}
+{#                <!--Pricing Table-->#}
+{#            </div>#}
+{##}
+{#            <div class="col-lg-4">#}
+{#                <!--Pricing Table-->#}
+{#                <div class="pricing-table plan3 mt-5">#}
+{#                    <div class="pricingHeader">#}
+{#                        <div class="icon">#}
+{#                            <i class="fab fa-telegram-plane"></i>#}
+{#                        </div>#}
+{#                        <div class="price">154</div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="pricingBody">#}
+{#                        <div class="info-pricing">#}
+{#                            <h2>Diamond</h2>#}
+{#                            <p class="mt-3">Arriving by car? Switch off your GPS-device once you reach the festival#}
+{#                                area! Your GPS device doesn’t know Tomorrowland ;-) .</p>#}
+{#                            <a href="#" class="btn mt-4 medium">Purchase Now</a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="overlay"></div>#}
+{#                </div>#}
+{#                <!--Pricing Table-->#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+<!--Pricing Table-->
+
+
+<!--Contact-->
+{#<section class="contactInfo" id="contact">#}
+{#    <div class="row">#}
+{#        <div class="col-lg-4 p-0">#}
+{#            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101379.18333420577!2d-76.30848102618998!3d3.507727522490663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3a04eebf762cf1%3A0x2add5da02ba41611!2sColombia%2C+Palmira%2C+Valle+del+Cauca!5e0!3m2!1ses!2sco!4v1528387975419"></iframe>#}
+{#        </div>#}
+{#        <div class="col-lg-8 p-0">#}
+{#            <div class="container">#}
+{#                <div class="row">#}
+{#                    <div class="col-xl-5 data-contact">#}
+{#                        <!--Item-->#}
+{#                        <div>#}
+{#                            <div class="items-contact">#}
+{#                                <i class="fa fa-phone"></i>#}
+{#                                <div class="aboutContact">#}
+{#                                    <h5>Phone</h5>#}
+{#                                    <p><a href="tel:#">+1 9000 91111</a></p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <!--Item-->#}
+{##}
+{#                            <!--Item-->#}
+{#                            <div class="items-contact">#}
+{#                                <i class="fa fa-envelope"></i>#}
+{#                                <div class="aboutContact">#}
+{#                                    <h5>Email</h5>#}
+{#                                    <p><a href="mailto:support@iwthemes.com">support@iwthemes.com</a></p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <!--Item-->#}
+{##}
+{#                            <!--Item-->#}
+{#                            <div class="items-contact">#}
+{#                                <i class="fas fa-paperclip"></i>#}
+{#                                <div class="aboutContact">#}
+{#                                    <h5>Website</h5>#}
+{#                                    <p><a href="#" target="_blank">www.iwthemes.com</a></p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <!--Item-->#}
+{##}
+{#                            <!--Item-->#}
+{#                            <div class="items-contact">#}
+{#                                <i class="fa fa-home"></i>#}
+{#                                <div class="aboutContact">#}
+{#                                    <h5>Address</h5>#}
+{#                                    <p>Ave. 7s Cra 13 - 13a Carabelix Center</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <!--Item-->#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-xl-7">#}
+{#                        <div class="contact-form">#}
+{#                            <h4>Do you have more Questions?</h4>#}
+{#                            <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod#}
+{#                                tempor incididunt ut labore et dolore magna aliqua.</p>#}
+{##}
+{#                            <form class="mt-4 form-contact">#}
+{#                                <div class="row">#}
+{#                                    <div class="col-sm-6"><input type="text" class="form-control"#}
+{#                                                                 placeholder="Write your Name" required></div>#}
+{#                                    <div class="col-sm-6"><input type="email" class="form-control"#}
+{#                                                                 placeholder="Write your Email" required></div>#}
+{#                                    <div class="col-12"><input type="number" class="form-control" placeholder="phone">#}
+{#                                    </div>#}
+{#                                    <div class="col-12"><textarea placeholder="your message" required></textarea></div>#}
+{#                                    <div class="col-12">#}
+{#                                        <button type="submit" class="btn btn-block">Send Message</button>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </form>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+<!--Contact-->
+
+<!--Twitter Api-->
+{#<div class="twitterApi">#}
+{#    <div class="row">#}
+{#        <div class="col">#}
+{#            <div class="twitterContent">#}
+{#                <i class="fab fa-twitter"></i>#}
+{#                <div class="twitter"></div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+<!--Twitter Api-->
+
+{% include 'include/footer.html' %}
+
+
+<!-- ======================= JQuery libs =========================== -->
+<!-- jQuery local-->
+<script src="{% static 'js/jquery.js' %}"></script>
+<!-- popper.js' %}-->
+<script src="{% static 'js/popper.min.js' %}"></script>
+<!-- Counter-->
+<script src="{% static 'js/counter/jquery.countdown.js' %}"></script>
+<!-- bootstrap.min.js' %}-->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- newsticker.js' %}-->
+<script src="{% static 'js/slick.min.js' %}"></script>
+<!-- Instagram-->
+<script src="{% static 'js/api-instagram.js' %}"></script>
+<!-- Twitter Feed-->
+<script src="{% static 'js/twitter/jquery.tweet.js' %}"></script>
+<!-- To Top-->
+<script src="{% static 'js/toTop.js' %}"></script>
+<!-- theme-main.js' %}-->
+<script src="{% static 'js/theme-main.js' %}"></script>
+
+<script>
+    $(document).bind("contextmenu", function (e) {
+        e.preventDefault();
+    });
+
+    $(document).keydown(function (e) {
+        if (e.which === 123) {
+            return false;
+        }
+    });
+</script>
+<!-- ======================= End JQuery libs =========================== -->
+</body>
+
+<!-- Mirrored from html.iwthemes.com/allEvents/Music/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Oct 2022 19:02:56 GMT -->
+</html>

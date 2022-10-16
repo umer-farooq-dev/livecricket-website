@@ -1,0 +1,81 @@
+{% load static %}
+
+
+<!--Home Welcome-->
+<header class="home-welcome" id="home">
+    <nav class="pt-3 menu-no-stick">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col text-left"><img src="{% static 'img/icons/logo-bg.png' %}" alt="logo" class="logo">
+                </div>
+                <div class="col text-right">
+                    <ul class="menu-bar">
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li class="navbar-mobile d-lg-none">
+                            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                                    data-target="#navbarToggleExternalContent"
+                                    aria-controls="navbarToggleExternalContent" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                <span class="close"><i class="fas fa-times"></i></span>
+                                <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="homeContent">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-lg-8">
+                    <!--Title-->
+                    <h1 class="summary">allEvents</h1>
+                    <!--Title-->
+
+                    <!--Where & When-->
+                    <div class="place-home">
+                            <span class="location">
+                                <i class="fas fa-map-marker-alt"></i> WorldCup, 2022
+                            </span>
+
+                        <time datetime="2020-07-01T08:00-08:00">
+                                <span class="dtstart">
+                                    <i class="far fa-calendar-alt"></i> 16 October 2022
+                                    <span class="value-title" title="2020-12-20T08:00-08:00"></span>
+                                </span>
+                        </time>
+                    </div>
+                    <!--Where & When-->
+
+                    <!--About-->
+                    <h3 class="description">
+                        Official T20 World Cup website - live matches, scores, news, highlights, commentary, rankings,
+                        videos and fixtures from the International Cricket Council.
+                    </h3>
+                    <!--About-->
+
+                    <!--Menu-->
+                    <ul class="menu-base d-none d-md-block">
+                        <li><a href="#trips"><i class="fab fa-telegram-plane"></i>
+                            <p>Trips</p></a></li>
+                        <li><a href="#register"><i class="fa fa-bullhorn"></i>
+                            <p> Details</p></a></li>
+                        <li><a href="#schedule"><i class="fa fa-list-ul"></i>
+                            <p> Schedule</p></a></li>
+                        <li><a href="#pricing"><i class="far fa-heart"></i>
+                            <p>Book</p></a></li>
+                        <li><a href="#contact"><i class="fa fa-plane"></i>
+                            <p>Contact</p></a></li>
+                    </ul>
+                    <!--Menu-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</header>
+<!--Home Welcome-->
