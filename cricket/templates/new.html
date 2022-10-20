@@ -1,0 +1,611 @@
+<body data-turbolinks="false" cz-shortcut-listen="true">
+
+<script>
+    function initHotjar() {
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () {
+                (h.hj.q = h.hj.q || []).push(arguments)
+            };
+            h._hjSettings = {hjid: 247816, hjsv: 6};
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    }
+
+    {
+        const consent = JSON.parse(localStorage.getItem('cookieConsent'))
+        if (consent && consent.state === 'accepted' && consent.preferences.analytics) {
+            initHotjar();
+
+            // Allow us to identify Hotjar recordings from a customers unique tracking_id.
+            // This allows us to link a user in Amplitude and other tools to a specific
+            // recording and experience in HotJar.
+            //
+            // Docs: https://help.hotjar.com/hc/en-us/articles/360038394053
+            const trackingId = 'f3eb86af-efe4-4bab-a702-af5ca2f12c94' || null;
+            window.hj('identify', trackingId);
+        }
+    }
+</script>
+
+<script>
+    function initFBPixel() {
+        window.fbq = null;
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window,
+            document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '1103735132974391', {
+            // ExternalId is used to match user events from Facebook Pixel &
+            // Facebook conversions API.
+            // Doc => https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers
+            'extern_id': 'f3eb86af-efe4-4bab-a702-af5ca2f12c94'
+        });
+        fbq('track', 'PageView');
+
+
+    }
+
+    {
+        const consent = JSON.parse(localStorage.getItem('cookieConsent'))
+        if (consent && consent.state === 'accepted' && consent.preferences.marketing) {
+            initFBPixel();
+        } else {
+            window.fbq = function () {
+            }
+        }
+    }
+
+
+    {
+        // Allow custom events to be triggered
+        // and passed to Google Tag Manager
+        //
+        // For example:
+        // dataLayer.push({
+        //   "event": "Purchase",
+        //   "order_value": "00.00",
+        //   "order_id": 1,
+        //   "enhanced_conversion_data": {
+        //     "email": "johndoe@example.com"
+        //   }
+        // });
+        //
+        // Docs: https://developers.google.com/tag-platform/tag-manager/web/datalayer#gtag.js
+
+        dataLayer = window.dataLayer || [];
+
+
+    }
+</script>
+
+
+<!-- TODO: Remove after refactoring and cookie banner is moved to React -->
+<div data-react-class="pages/SignupWizardPage/SignupWizardPage"
+     data-react-props="{&quot;preferredLanguage&quot;:&quot;en&quot;,&quot;csrfToken&quot;:&quot;WVz/nHyC81gY4a3UkjW0e0EgdDsgsx54Ko+0YuxDiTRVCCK3kNPXK3JGIRiNbfR6ijruJVQMJZrjAPiFZqIONQ==&quot;}">
+    <div class="wizardnavigationlayout-module__container___3OCx1">
+        <div class="Toastify"></div>
+        <div class="loadingscreen-module__container___15hjo loadingscreen-module__hidden___2DFAP loadingscreen-module__static___V1ePt">
+            <img alt="" src="//d1qzwxap7t1x49.cloudfront.net/packs/media/dogs/dog-standing-d8e1b2a6.svg">
+            <p class="text-module__display24___1XFjP   text-module__brandBlue500___2T_jP  text-module__scale___3IzpA">
+                Pawcessing</p></div>
+        <nav class="topnavbanner-module__topNavBanner___3Rrub "><a href="/"><img
+                src="https://res.cloudinary.com/ldhg5acsz/image/upload/f_auto,q_auto/v1/Web/photos/logos/butternut-logo-top"
+                class="navlogo-module__large___1WFHl" alt="Butternut Box Logo"></a>
+            <div class="topnavdiscount-module__topNavDiscount___1af5W">
+                <div class="labellist-module__container___1C6pR labellist-module__right___2AjeT">
+                    <div class="
+        label-module__container___2ufdS
+        label-module__brandRed400___2R_BM
+        label-module__small___1fOfr
+      "><span class="text-module__textRegular12___1aXXM   text-module__brandWhite___1WGBn  text-module__scale___3IzpA">15% OFF</span>
+                    </div>
+                </div>
+                <p class="text-module__textRegular14___3_s7- text-module__nomargin___SJtJs  text-module__brandBlue500___2T_jP text-module__rightAlign___3mBgI ">
+                    Your dog will thank you later</p></div>
+        </nav>
+        <div class="wizardnavigation-module__container___2x_Fx ">
+            <div class="wizardnavigation-module__progressBarWrapper___2-TV8">
+                <div class="progressbar-module__progressBar___2lsF2 progressbar-module__grey200___33Ri1">
+                    <div class="progressbar-module__progressBarInner___2k8aK progressbar-module__secondary___3h42W"
+                         style="width: 93.3333%;"></div>
+                </div>
+            </div>
+            <div class="herotext-module__container___1O5g8 herotext-module__wizard___1srOW false">
+                <div class="herotext-module__contents___3cHHR">
+                    <div class="herotext-module__title___vlj4A">
+                        <div class=""><h1
+                                class="text-module__display28___zoDdI text-module__nomargin___SJtJs  text-module__brandBlue500___2T_jP  text-module__scale___3IzpA">
+                            Where should we deliver A little skinny's food?</h1></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wizardnavigationlayout-module__stepContainer___1Nbs_">
+            <div class="wizardnavigationlayout-module__stepContainerWrapper___1oL5V">
+                <div class="">
+                    <div class="location-module__question___2mc0d" id="whatLocationStep">
+                        <div class="location-module__subQuestion___1rxmW">
+                            <div class="textseparator-module__container___zW3QQ">
+                                <hr class="separator-module__container___1fcHl separator-module__bold___3x-v6  ">
+                                <div class="textseparator-module__textContainer___heDn0 "><p
+                                        class="text-module__display16___2vuXl text-module__nomargin___SJtJs text-module__bold___Z1qaE text-module__brandBlue500___2T_jP  text-module__scale___3IzpA">
+                                    A little skinny lives in</p></div>
+                                <hr class="separator-module__container___1fcHl separator-module__bold___3x-v6  ">
+                            </div>
+                            <label for="postcodeInput">
+                                <div class="location-module__dropDown___2Vlf2">
+                                    <div id="selectedCountry" class="location-module__selectedCountry___38c6m"
+                                         role="button" tabindex="0"><img
+                                            src="//d1qzwxap7t1x49.cloudfront.net/packs/media/flags/gb-flag-81868df8.svg"
+                                            alt="The flag of Great Britain" class="location-module__countryFlag___ccBBv"
+                                            height="25" width="43">
+                                        <p class="text-module__textRegular16___Juyzv   text-module__brandBlue500___2T_jP  text-module__scale___3IzpA">
+                                            Great Britain</p>
+                                        <div class="location-module__arrowWrapper___2Pvro"><img
+                                                src="//d1qzwxap7t1x49.cloudfront.net/packs/media/arrows/arrow-blue-fb46dbfe.svg"
+                                                class="location-module__arrowUp___4dU7k" alt="A blue arrow pointing up"
+                                                height="16" width="19"></div>
+                                    </div>
+                                    <div class="location-module__countryOptions___HRXaj">
+                                        <div class="location-module__countryOption___1OjB7" id="BE" role="button"
+                                             tabindex="0"><img class="location-module__countryFlag___ccBBv"
+                                                               src="//d1qzwxap7t1x49.cloudfront.net/packs/media/flags/be-flag-ecf56e22.svg"
+                                                               alt="The flag of Belgium" height="25" width="43">
+                                            <p class="text-module__textRegular16___Juyzv   text-module__brandBlue500___2T_jP  text-module__scale___3IzpA">
+                                                Belgium</p></div>
+                                        <div class="location-module__countryOption___1OjB7" id="IE" role="button"
+                                             tabindex="0"><img class="location-module__countryFlag___ccBBv"
+                                                               src="//d1qzwxap7t1x49.cloudfront.net/packs/media/flags/ie-flag-dafb04da.svg"
+                                                               alt="The flag of Republic of Ireland" height="25"
+                                                               width="43">
+                                            <p class="text-module__textRegular16___Juyzv   text-module__brandBlue500___2T_jP  text-module__scale___3IzpA">
+                                                Republic of Ireland</p></div>
+                                        <div class="location-module__countryOption___1OjB7" id="NI" role="button"
+                                             tabindex="0"><img class="location-module__countryFlag___ccBBv"
+                                                               src="//d1qzwxap7t1x49.cloudfront.net/packs/media/flags/gb-flag-81868df8.svg"
+                                                               alt="The flag of Northern Ireland" height="25"
+                                                               width="43">
+                                            <p class="text-module__textRegular16___Juyzv   text-module__brandBlue500___2T_jP  text-module__scale___3IzpA">
+                                                Northern Ireland</p></div>
+                                        <div class="location-module__countryOption___1OjB7" id="NL" role="button"
+                                             tabindex="0"><img class="location-module__countryFlag___ccBBv"
+                                                               src="//d1qzwxap7t1x49.cloudfront.net/packs/media/flags/nl-flag-50fd9c0d.svg"
+                                                               alt="The flag of Netherlands" height="25" width="43">
+                                            <p class="text-module__textRegular16___Juyzv   text-module__brandBlue500___2T_jP  text-module__scale___3IzpA">
+                                                Netherlands</p></div>
+                                    </div>
+                                </div>
+                                <p class="text-module__textRegular16___Juyzv   text-module__brandBlue500___2T_jP  text-module__scale___3IzpA">
+                                    Your postcode</p><input id="postcodeInput" type="text" placeholder="e.g. W12 7FP"
+                                                            aria-invalid="true" value=""></label>
+                            <div class="location-module__dogFlagImage___YVgtR"><img
+                                    src="//d1qzwxap7t1x49.cloudfront.net/packs/media/dogs/GB-flag-dog-c0d9a615.svg"
+                                    alt="Dog holding a Union Jack flag."></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stickynavigation-module__container___SY8J-">
+                    <div id="stickyNavigation" class="stickynavigation-module__wrapper___1eOk2"><a aria-disabled="true"
+                                                                                                   class=""
+                                                                                                   href="/wizard/snacks">
+                        <button class="button-module__button___Epy33 button-module__secondary___15CX- button-module__regular___1eNQR"
+                                type="button" aria-label="BACK">
+                            <div class="button-module__iconLeft___1GF2y">
+                                <svg height="18" viewBox="0 0 25 30" width="18" class="chevron-module__left___wGNFh"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path clip-rule="evenodd"
+                                          d="m1.58201 29.625h-.620324c-.682355-1.6129-.341177-2.8845 1.147594-3.784 4.83852-2.9465 9.95622-5.4898 13.89522-9.739.8374-.8995.9925-1.5509.031-2.2642-2.2642-1.6749-4.5593-3.3188-6.91657-4.86956-1.86097-1.20963-3.81499-2.26417-5.769-3.31872-1.39573-.74439-1.73691-1.95402-1.67487-3.38076.09305-1.923001.93048-2.388244 2.54332-1.364712 2.48129 1.581822 5.02461 3.070592 7.44382 4.714452 3.9081 2.66739 7.9092 5.2417 11.6311 8.1572 2.2021 1.7369 1.5508 3.722-1.0546 4.7455-1.7989.7134-3.6599 1.4888-5.2417 2.6054-4.8075 3.4428-10.01819 6.1412-15.41499 8.4984z"
+                                          fill="#e66c55" fill-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div class="button-module__buttonText___1kKa8 button-module__always___3i-Y2"><span
+                                    class="text-module__textMono18___1kDdj text-module__nomargin___SJtJs  text-module__brandRed400___2u5Cw  ">BACK</span>
+                            </div>
+                        </button>
+                    </a><a aria-disabled="true" class="stickynavigation-module__disabled___1GDwt"
+                           href="/wizard/pet-parent">
+                        <button class="button-module__button___Epy33 button-module__primary___ZppCy button-module__regular___1eNQR"
+                                disabled="" type="button" aria-label="CONTINUE">
+                            <div class="button-module__buttonText___1kKa8 button-module__always___3i-Y2"><span
+                                    class="text-module__textMono18___1kDdj text-module__nomargin___SJtJs  text-module__brandWhite___1WGBn  ">CONTINUE</span>
+                            </div>
+                            <div class="button-module__iconRight___vm0Vy">
+                                <svg height="18" viewBox="0 0 25 30" width="18" class="chevron-module__right___1sKmq"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path clip-rule="evenodd"
+                                          d="m1.58201 29.625h-.620324c-.682355-1.6129-.341177-2.8845 1.147594-3.784 4.83852-2.9465 9.95622-5.4898 13.89522-9.739.8374-.8995.9925-1.5509.031-2.2642-2.2642-1.6749-4.5593-3.3188-6.91657-4.86956-1.86097-1.20963-3.81499-2.26417-5.769-3.31872-1.39573-.74439-1.73691-1.95402-1.67487-3.38076.09305-1.923001.93048-2.388244 2.54332-1.364712 2.48129 1.581822 5.02461 3.070592 7.44382 4.714452 3.9081 2.66739 7.9092 5.2417 11.6311 8.1572 2.2021 1.7369 1.5508 3.722-1.0546 4.7455-1.7989.7134-3.6599 1.4888-5.2417 2.6054-4.8075 3.4428-10.01819 6.1412-15.41499 8.4984z"
+                                          fill="#fff" fill-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                        </button>
+                    </a></div>
+                </div>
+            </div>
+        </div>
+        <footer class="wizardfooter-module__freshFactFooter___3UuYY">
+            <div class="wizardfooter-module__freshFactContainer___RDqKb"><img
+                    class="wizardfooter-module__freshFactIllustration___X0GX5" alt="An illustration of two carrots."
+                    src="//d1qzwxap7t1x49.cloudfront.net/packs/media/ingredients/beans--brown-e651a47d.svg">
+                <h3 class="text-module__display20___2dYpz text-module__nomargin___SJtJs  text-module__cardboardBrown___1-5q5  text-module__scale___3IzpA">
+                    Fresh Fact</h3>
+                <p class="text-module__textRegular14___3_s7- text-module__nomargin___SJtJs  text-module__cardboardBrown___1-5q5  text-module__scale___3IzpA">
+                    The story of Butternut Box begins with a farting Staffie called Rudie. Only home-cooked meals could
+                    help her terrible farts, and the rest, as they say, is history.</p></div>
+        </footer>
+    </div>
+</div>
+
+
+<link rel="apple-touch-icon" sizes="180x180"
+      href="https://d1qzwxap7t1x49.cloudfront.net/assets/favicons/apple-touch-icon-50cf39914c26bb3576e319030fbedf72fdccb1473134c96375aca01bdea79127.png">
+<link rel="icon" type="image/png" sizes="32x32"
+      href="https://d1qzwxap7t1x49.cloudfront.net/assets/favicons/favicon-32x32-839cf395bc4f56d588dff0be7578d23b2ab888a064a38b1aab41d75a61a182cf.png">
+<link rel="icon" type="image/png" sizes="16x16"
+      href="https://d1qzwxap7t1x49.cloudfront.net/assets/favicons/favicon-16x16-b23be23e770654bda6842f37303099310bf2c515d35bc723c17fe24cec5a1fb4.png">
+<link rel="manifest"
+      href="https://d1qzwxap7t1x49.cloudfront.net/assets/favicons/manifest-d497b7ff6e253b2b4c740333e9f7eb66f837adaabb51f8b4a0beba64db1f39f7.json">
+<link rel="mask-icon"
+      href="https://d1qzwxap7t1x49.cloudfront.net/assets/favicons/safari-pinned-tab-20a12cfe0251d4cf04ae61f71b9bc7e1ee596c33e1952a658be8833b255607e3.svg">
+<link rel="shortcut icon"
+      href="https://d1qzwxap7t1x49.cloudfront.net/assets/favicons/favicon-313448873f1d0a1657aa700eb6fa77fc87b53cd8a63e55f48bc7d5d1d9ebcf7b.ico">
+<meta name="msapplication-config"
+      content="https://d1qzwxap7t1x49.cloudfront.net/assets/favicons/browserconfig-a71c7a70fffb39d77e4a2c4abf67cf2d8a0251e84bbfd054a27a1d33125c2fae.xml">
+<meta name="theme-color" content="#ffffff">
+
+<script>
+    function initSegment(preferences) {
+        if (!preferences.analytics && !preferences.marketing) {
+            window.analytics = []
+            window.analytics.track = function () {
+            }
+            window.analytics.identify = function () {
+            }
+            window.analytics.ready = function () {
+            }
+            window.analytics.page = function () {
+            }
+            return
+        }
+        !function () {
+            var analytics = window.analytics = window.analytics || [];
+            if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice."); else {
+                analytics.invoked = !0;
+                analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on"];
+                analytics.factory = function (t) {
+                    return function () {
+                        var e = Array.prototype.slice.call(arguments);
+                        e.unshift(t);
+                        analytics.push(e);
+                        return analytics
+                    }
+                };
+                for (var t = 0; t < analytics.methods.length; t++) {
+                    var e = analytics.methods[t];
+                    analytics[e] = analytics.factory(e)
+                }
+                analytics.load = function (t, e) {
+                    var n = document.createElement("script");
+                    n.type = "text/javascript";
+                    n.async = !0;
+                    n.src = "https://cdn.segment.com/analytics.js/v1/" + t + "/analytics.min.js";
+                    var a = document.getElementsByTagName("script")[0];
+                    a.parentNode.insertBefore(n, a);
+                    analytics._loadOptions = e
+                };
+                analytics.SNIPPET_VERSION = "4.1.0";
+                analytics.load("CJzCPQ73sKib45KewpzVo6QOXmMsfwjM", {
+                    integrations: {
+                        'Amplitude': preferences.analytics,
+                        'Google Analytics': preferences.analytics,
+                        'Google Tag Manager': preferences.marketing,
+                        'Segment.io': preferences.analytics,
+                        'Iterable': false
+                    }
+                });
+                analytics.ready(function () {
+                    window.ga && window.ga(function (tracker) {
+                        var clientId = tracker.get('clientId')
+                        document.cookie = 'ga_client_id=' + clientId + '; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/'
+                    });
+                    var originalTrackFunction = window.analytics.track
+                    window.analytics.track = function (event, properties = {}, options) {
+                        defaultOptions = {
+                            integrations: {
+                                'UserLeap': false
+                            }
+                        }
+                        originalTrackFunction(event, properties, options || defaultOptions)
+                    }
+                });
+            }
+        }();
+    }
+
+    {
+        const consent = JSON.parse(localStorage.getItem('cookieConsent'))
+        if (consent && consent.state === 'accepted') {
+            initSegment(consent.preferences);
+        } else {
+            // only load passive analytics if the banner hasn't been dismissed
+            initSegment({analytics: true, marketing: false})
+        }
+    }
+</script>
+
+<script>
+    window.analytics.ready(function () {
+        window.analytics.identify(
+            'f3eb86af-efe4-4bab-a702-af5ca2f12c94',
+            {
+                "type": "Guest",
+                "number_of_dogs": 0,
+                "estimated_segment_when_created": "not_segmented",
+                "discount_code": {"code": "woof", "channel": ""},
+                "shipping_country_id": {
+                    "id": 1,
+                    "name": "Great Britain",
+                    "code": "GB",
+                    "created_at": "2020-07-13T11:20:06.392Z",
+                    "updated_at": "2022-04-07T15:53:52.906Z",
+                    "currency": "GBP",
+                    "sca_enforced": true,
+                    "default_language": "en",
+                    "time_zone": "London"
+                }
+            }
+        )
+
+        window.analytics.page({
+                path: location.pathname + location.hash,
+                properties: {
+                    "campaign": {},
+                    "traits": {
+                        "type": "Guest",
+                        "number_of_dogs": 0,
+                        "estimated_segment_when_created": "not_segmented",
+                        "discount_code": {"code": "woof", "channel": ""},
+                        "shipping_country_id": {
+                            "id": 1,
+                            "name": "Great Britain",
+                            "code": "GB",
+                            "created_at": "2020-07-13T11:20:06.392Z",
+                            "updated_at": "2022-04-07T15:53:52.906Z",
+                            "currency": "GBP",
+                            "sca_enforced": true,
+                            "default_language": "en",
+                            "time_zone": "London"
+                        }
+                    },
+                    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36",
+                    "share_source": null
+                }
+            },
+            {
+                integrations: {
+                    'UserLeap': false
+                }
+            })
+    })
+</script>
+
+<script>
+    {
+        // Set cookie consent from Unbounce
+        if (document.cookie.includes('ubcc=accept')) {
+            const positiveConsent = JSON.stringify({state: "accepted", preferences: {marketing: true, analytics: true}})
+            localStorage.setItem('cookieConsent', positiveConsent)
+        }
+
+        if (document.cookie.includes('ubcc=reject')) {
+            const negativeConsent = JSON.stringify({
+                state: "accepted",
+                preferences: {marketing: false, analytics: false}
+            })
+            localStorage.setItem('cookieConsent', negativeConsent)
+        }
+
+        const consent = JSON.parse(localStorage.getItem('cookieConsent'))
+        if ((!consent && document.cookie.includes('cookie_consent_given=true')) || (consent && consent.state === 'banner-shown')) {
+            localStorage.setItem('cookieConsent', JSON.stringify({
+                state: 'accepted',
+                preferences: {
+                    marketing: true,
+                    analytics: true
+                }
+            }))
+
+            let trackSecondPageLoadConsent;
+            const fetchAnalytics = function () {
+                if (window.analytics) {
+                    window.analytics.track('Cookie Preferences Saved', {
+                        preferences: {
+                            analytics: true,
+                            marketing: true
+                        },
+                        context: 'Second page load'
+                    })
+                    clearInterval(trackSecondPageLoadConsent)
+                }
+            }
+            if (consent && consent.state === 'banner-shown') {
+                trackSecondPageLoadConsent = setInterval(fetchAnalytics, 500)
+            }
+        }
+    }
+</script>
+
+<div data-gtm-container-id="GTM-PLCC5PS" id="gtm-data"></div>
+
+<!-- Ribbon Integration Snippet -->
+<script type="text/javascript">
+    (function (r, i, bb, o, n) {
+        window.ribbon = function () {
+            R._q.push(arguments)
+        }
+        var R = window.ribbon;
+        R.ribbonID = bb;
+        R.env = o;
+        R._q = [];
+        s = r.createElement('script');
+        s.async = !0;
+        s.src = i + '?rid=' + R.ribbonID;
+        f = r.getElementsByTagName('script')[0];
+        f.parentNode.insertBefore(s, f);
+    })(document, 'https://cdn.ribbonapp.com/ribbon.js', "015057261f794b94860a58d200e5075b");
+</script>
+
+
+<iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame"
+        src="https://vars.hotjar.com/box-c1417f7b48595d0dbca01c86f95d6dbb.html"
+        style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe>
+<iframe id="_hjSafeContext_94327203" src="about:blank"
+        style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe>
+<script type="text/javascript" id="">(function (b, c, e, f, d) {
+    b[d] = b[d] || [];
+    var g = function () {
+        var a = {ti: "26011980"};
+        a.q = b[d];
+        b[d] = new UET(a);
+        b[d].push("pageLoad")
+    };
+    var a = c.createElement(e);
+    a.src = f;
+    a.async = 1;
+    a.onload = a.onreadystatechange = function () {
+        var b = this.readyState;
+        b && "loaded" !== b && "complete" !== b || (g(), a.onload = a.onreadystatechange = null)
+    };
+    c = c.getElementsByTagName(e)[0];
+    c.parentNode.insertBefore(a, c)
+})(window, document, "script", "//bat.bing.com/bat.js", "uetq");</script>
+<script type="text/javascript" id="">!function (d, e, f, a, b, c) {
+    d.twq || (a = d.twq = function () {
+        a.exe ? a.exe.apply(a, arguments) : a.queue.push(arguments)
+    }, a.version = "1.1", a.queue = [], b = e.createElement(f), b.async = !0, b.src = "//static.ads-twitter.com/uwt.js", c = e.getElementsByTagName(f)[0], c.parentNode.insertBefore(b, c))
+}(window, document, "script");
+twq("init", "o1kc4");
+twq("track", "PageView");</script>
+<script type="text/javascript" id="">(function (g, e, a, f, b, c, d) {
+    b.ire_o = a;
+    b[a] = b[a] || function () {
+        (b[a].a = b[a].a || []).push(arguments)
+    };
+    c = f.createElement(e);
+    d = f.getElementsByTagName(e)[0];
+    c.async = 1;
+    c.src = g;
+    d.parentNode.insertBefore(c, d)
+})("//d.impactradius-event.com/A2403796-2ac4-4ad0-b0d7-52362e3e8cbe1.js", "script", "ire", document, window);</script>
+<script type="text/javascript" id="">ire("identify", {customerId: "", customerEmail: ""});</script>
+
+<script type="text/javascript" id="">!function (d, g, e) {
+    d.TiktokAnalyticsObject = e;
+    var a = d[e] = d[e] || [];
+    a.methods = "page track identify instances debug on off once ready alias group enableCookie disableCookie".split(" ");
+    a.setAndDefer = function (b, c) {
+        b[c] = function () {
+            b.push([c].concat(Array.prototype.slice.call(arguments, 0)))
+        }
+    };
+    for (d = 0; d < a.methods.length; d++) a.setAndDefer(a, a.methods[d]);
+    a.instance = function (b) {
+        b = a._i[b] || [];
+        for (var c = 0; c < a.methods.length; c++) a.setAndDefer(b, a.methods[c]);
+        return b
+    };
+    a.load = function (b, c) {
+        var f = "https://analytics.tiktok.com/i18n/pixel/events.js";
+        a._i = a._i || {};
+        a._i[b] = [];
+        a._i[b]._u = f;
+        a._t = a._t || {};
+        a._t[b] = +new Date;
+        a._o = a._o || {};
+        a._o[b] = c || {};
+        c = document.createElement("script");
+        c.type = "text/javascript";
+        c.async = !0;
+        c.src = f + "?sdkid\x3d" + b + "\x26lib\x3d" + e;
+        b = document.getElementsByTagName("script")[0];
+        b.parentNode.insertBefore(c, b)
+    };
+    a.load("C5K15O2EIQRN3OTMHC1G");
+    a.page()
+}(window, document, "ttq");
+ttq.track("ViewContent");</script>
+
+
+<script type="text/javascript" id="">(function (d) {
+    window["__adal_disable_" + d] || (function (a, c, b) {
+        if (!a[b]) {
+            a.GlobalAdalyserNamespace = a.GlobalAdalyserNamespace || [];
+            a.GlobalAdalyserNamespace.push(b);
+            a[b] = function () {
+                (a[b].q = a[b].q || []).push(arguments)
+            };
+            a[b].q = a[b].q || [];
+            var e = c.createElement("script");
+            c = c.getElementsByTagName("script")[0];
+            e.async = 1;
+            e.src = "//c5.adalyser.com/adalyser.js?cid\x3d" + d;
+            c.parentNode.insertBefore(e, c)
+        }
+    }(window, document, "adalyserTracker"), window.adalyserTracker("create", {
+        campaignCookieTimeout: 15552E3, conversionCookieTimeout: 604800,
+        clientId: d, trafficSourceInternalReferrers: ["^(.*\\.)?butternutbox\\.com$"]
+    }), window.adalyserTracker("trackSession", "lce1"))
+})("butternutbox");</script>
+<script type="text/javascript" id="" src="//dynamic.criteo.com/js/ld/ld.js?a=96842"></script>
+<script type="text/javascript" id="">(function (a, b) {
+    var d = "pdst-capture", e = "script";
+    if (!b.getElementById(d)) {
+        a.pdst = a.pdst || function () {
+            (a.pdst.q = a.pdst.q || []).push(arguments)
+        };
+        var c = b.createElement(e);
+        c.id = d;
+        c.async = 1;
+        c.src = "https://cdn.pdst.fm/ping.min.js";
+        b = b.getElementsByTagName(e)[0];
+        b.parentNode.insertBefore(c, b)
+    }
+    a.pdst("conf", {key: "7f1fea17494a4f0b894daff7bb44673b"});
+    a.pdst("view")
+})(window, document);</script>
+<div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon70072839709"><img
+        style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon824921659109" width="0" height="0"
+        alt=""
+        src="https://bat.bing.com/action/0?ti=26011980&amp;Ver=2&amp;mid=72bb7400-553e-460b-811c-46a168c7c6b5&amp;sid=6557af40503b11edb4096ddf1d954e2b&amp;vid=6557fab0503b11ed87e113cb66182359&amp;vids=0&amp;msclkid=N&amp;uach=pv%3D10.0.0&amp;pi=918639831&amp;lg=en-US&amp;sw=1366&amp;sh=768&amp;sc=24&amp;tl=Get%20Started%20%7C%20Butternut%20Box&amp;p=https%3A%2F%2Fbutternutbox.com%2Fwizard%2Fweight&amp;r=&amp;lt=7908&amp;evt=pageLoad&amp;sv=1&amp;rn=36732">
+</div>
+<img src="https://t.co/i/adsct?bci=3&amp;eci=2&amp;event_id=e411a226-9d62-41cd-8760-7b787bfabb5f&amp;events=%5B%5B%22pageview%22%2C%7B%7D%5D%5D&amp;integration=advertiser&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=182fca82-bd6d-4539-b008-b0f6c4e41438&amp;tw_document_href=https%3A%2F%2Fbutternutbox.com%2Fwizard%2Fweight&amp;tw_iframe_status=0&amp;tw_order_quantity=0&amp;tw_sale_amount=0&amp;txn_id=o1kc4&amp;type=javascript&amp;version=2.3.27"
+     height="1" width="1" style="display: none;"><img
+        src="https://analytics.twitter.com/i/adsct?bci=3&amp;eci=2&amp;event_id=e411a226-9d62-41cd-8760-7b787bfabb5f&amp;events=%5B%5B%22pageview%22%2C%7B%7D%5D%5D&amp;integration=advertiser&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=182fca82-bd6d-4539-b008-b0f6c4e41438&amp;tw_document_href=https%3A%2F%2Fbutternutbox.com%2Fwizard%2Fweight&amp;tw_iframe_status=0&amp;tw_order_quantity=0&amp;tw_sale_amount=0&amp;txn_id=o1kc4&amp;type=javascript&amp;version=2.3.27"
+        height="1" width="1" style="display: none;">
+<div id="criteo-tags-div" style="display: none;"></div>
+<script type="text/javascript" id="">window.criteo_q = window.criteo_q || [];
+var deviceType = /iPad/.test(navigator.userAgent) ? "t" : /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Silk/.test(navigator.userAgent) ? "m" : "d";
+window.criteo_q.push({event: "setAccount", account: 96842}, {
+    event: "setSiteType",
+    type: deviceType
+}, {event: "viewHome"});</script>
+<iframe height="0" width="0" title="Criteo DIS iframe" style="display: none;"></iframe>
+</body>
